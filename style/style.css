@@ -1,0 +1,83 @@
+*{margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+body {   
+     background-color: white;
+     font-family: "Gill Sans", sans-serif;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    height:100vh;
+    padding: 10% 5% 10% 6%   ;
+    
+}
+.pic{
+  
+    display: flex;
+    justify-self: center;
+
+
+}
+
+
+.left{
+    display: flex;
+    background-color: lightgray;
+    justify-content: center;
+    gap: 2%;
+    text-align: center;
+    flex-grow: 3;
+    border-radius: 15px;
+
+}
+.logein{
+    
+    align-self: center;
+    padding: 0 10px 0 30px;
+
+}
+.texte{
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.texte h3{
+    font-size: 40px;
+
+}
+.texte p{
+    padding: 0 5px 0 5px;
+}
+.logein form label i {
+     display: block;
+     margin-top:6px;
+     margin-bottom: 5px;
+     font-size: 25px;
+
+}
+label{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.logein button{
+    margin-top: 15px;
+    color: white;
+    border:none ;
+    border-radius: 5px;
+    background-color: rgb(150, 147, 147);
+    height: 30px;
+    width:50% ;
+
+}
+.logein form input{
+    height: 30px;
+    width: 100%;
+
+}
