@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="parent">
+        <div class="container">
+            <div class="form-section">
+                <div id="steps">
+                    <div class="step active">1</div>
+                    <div class="line"></div>
+                    <div class="step">2</div>
+                    <div class="line"></div>
+                    <div class="step">3</div>
+                </div>
+                <form id="sign-up">
+                    <!-- Step 1: First Name and Last Name -->
+                    <div class="step-content" id="step-1">
+                        <label for="first-name">First Name:</label>
+                        <input type="text" id="first-name" name="first-name" required>
+                        <div class="error"></div>
+
+                        <label for="last-name">Last Name:</label>
+                        <input type="text" id="last-name" name="last-name" required>
+                        <div class="error"></div>
+                    </div>
+
+                    <!-- Step 2: Email and Profile Picture -->
+                    <div class="step-content" id="step-2" style="display: none;">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <div class="error"></div>
+
+                        <label for="picture">Profile Picture:</label>
+                        <input type="file" id="picture" name="picture" accept="image/*">
+                        <div class="error"></div>
+                    </div>
+
+                    <!-- Step 3: Password and Confirm Password -->
+                    <div class="step-content" id="step-3" style="display: none;">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                        <div class="error"></div>
+
+                        <label for="confirm-password">Confirm Password:</label>
+                        <input type="password" id="confirm-password" name="confirm-password" required>
+                        <div class="error"></div>
+                    </div>
+
+                    <button type="button" class="btn" id="next-btn">Next</button>
+                    <button type="button" class="btn" id="prev-btn">previous</button>
+
+                </form>
+            </div>
+            <div class="info-section">
+                <h2>Hello, Friend!</h2>
+                <p>Enter your personal details and start your journey with us</p>
+            </div>
+        </div>
+        <div class="img">
+            <img src="/img/signUP.svg" alt="image">
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
