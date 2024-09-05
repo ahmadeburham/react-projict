@@ -1,0 +1,62 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.score{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+
+    gap: 30%;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+.score h3{
+    font-size: 40px;
+    align-self: flex-start;
+    margin-top: 15%;
+}
+.pirfctscore{
+    display: flex;
+    gap: 12%;
+
+    margin-left: 70px;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    gap: 30%;
+    justify-content: center;
+
+}
+.left p{
+    align-self: center;
+    font-size: 40px;
+    color: blue;
+}
+
+.left h3{
+    align-self: center;
+    font-size: 35px;
+}
+.right{
+    align-self: center;
+}
+
+.timeOut{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+
+}
+.timeOut .container{
+    align-self: center;
+    text-align: center;
+
+    font-size: 40px;
+}
