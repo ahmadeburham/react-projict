@@ -17,6 +17,10 @@ class QuizApp {
         this.score = 0;
         this.timeLeft = 300; 
         this.timerElement = document.getElementById('time-left');
+        this.logout=document.getElementById("logout-btn").addEventListener("click",()=>{
+            window.location.replace('../index.html');
+        })
+        this.submit= document.getElementById("submit").addEventListener("click",()=>this.calculateScore())
         
         document.getElementById('prev-btn').addEventListener('click', () => this.prevQuestion());
         document.getElementById('next-btn').addEventListener('click', () => this.nextQuestion());
@@ -112,8 +116,6 @@ class QuizApp {
         if (this.currentQuestionIndex < this.totalQuestions - 1) {
             this.currentQuestionIndex++;
             this.renderQuestion();
-        } else if (this.currentQuestionIndex === this.totalQuestions - 1) {
-            this.calculateScore();
         }
     }
 

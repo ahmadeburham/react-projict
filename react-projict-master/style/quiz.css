@@ -171,6 +171,16 @@ body {
     border: 1px solid #4caf50;
 }
 
+#submit{
+    background-color: #f76c6c;
+    border: none;
+    padding: 8px 12px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+}
 
-
+#time-left{
+    display: block;
+}
 
