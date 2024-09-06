@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if(time==true) {
         main.innerHTML = `
         <div class="timeOut">
-        45
+
             <div class="container">
                 <h3>your time is out</h3>
                 <img src="../img/th-2269865930.png" alt="">
