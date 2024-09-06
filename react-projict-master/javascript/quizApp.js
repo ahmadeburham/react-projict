@@ -129,7 +129,7 @@ class QuizApp {
 
     showResults() {
         localStorage.setItem('score', this.score);
-        localStorage.setItem('score', this.totalQuestions);
+        localStorage.setItem('totalQ', this.totalQuestions);
         window.location.replace('../finallScreen/index.html');
     }
 
@@ -144,6 +144,9 @@ class QuizApp {
         } else {
             localStorage.setItem('timeISUp', true);
             window.location.replace('../finallScreen/index.html');
+            score=0
+            localStorage.setItem('score', score);
+
         }
     }
 }

@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let totalQuestions=Number(localStorage.getItem("totalQuestions"));
     let time=localStorage.getItem("timeISUp");
     let main = document.getElementById("main");
-
-    if(time==true) {
+    
+    if(time==="true") {
         main.innerHTML = `
         <div class="timeOut">
 
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <img src="../img/th-3618339294.png" alt="">
             </div>
         </div>`;
-    } else if (score > 0) {
+    } else if (score >= 0) {
         main.innerHTML = `
         <div class="score">
             <h3>hi<br>your score is${score}/${totalQuestions} <br></h3>
