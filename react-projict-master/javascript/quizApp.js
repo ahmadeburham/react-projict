@@ -49,7 +49,7 @@ class QuizApp {
                     .map(value => ({ value, sort: Math.random() }))
                     .sort((a, b) => a.sort - b.sort)
                     .map(({ value }) => value)
-            console.log(this.questions);
+
             
             
             this.totalQuestions = this.questions.length;
@@ -82,7 +82,15 @@ class QuizApp {
             flagedbuttomn.innerText = this.currentQuestionIndex;
             this.flageArea.appendChild(flagedbuttomn)
             this.flagedArry.push(this.currentQuestionIndex)
+        }else{
+           
+            
+            
+            const deletbtn=document.getElementById(`flagged-btn-${this.currentQuestionIndex}`)
+            deletbtn.remove()
+            this.flagedArry.pop(this.currentQuestionIndex)
         }
+
     }
     handledeflag(){
         
