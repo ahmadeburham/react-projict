@@ -21,7 +21,12 @@ class QuizApp {
             window.location.replace('../index.html');
         })
         this.submit= document.getElementById("submit").addEventListener("click",()=>this.calculateScore())
+        this.fullname=document.getElementById("fullNmame").innerHTML=`
+        ${localStorage.getItem("first-name") }
+        ${localStorage.getItem("last-name")}
         
+        `
+
         document.getElementById('prev-btn').addEventListener('click', () => this.prevQuestion());
         document.getElementById('next-btn').addEventListener('click', () => this.nextQuestion());
         localStorage.setItem('timeISUp', false);
