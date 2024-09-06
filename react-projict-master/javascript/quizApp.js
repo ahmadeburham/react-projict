@@ -16,6 +16,7 @@ class QuizApp {
         this.userAnswers = [];
         this.score = 0;
         this.timeLeft = 300; 
+        this.flagedArry=[];
         this.timerElement = document.getElementById('time-left');
         this.logout=document.getElementById("logout-btn").addEventListener("click",()=>{
             window.location.replace('../index.html');
@@ -29,6 +30,10 @@ class QuizApp {
         this.flageArea=document.getElementById("flaged")
         document.getElementById('prev-btn').addEventListener('click', () => this.prevQuestion());
         document.getElementById('next-btn').addEventListener('click', () => this.nextQuestion());
+
+        this.flagebtn=document.getElementsByClassName('flaged-btn')
+        
+
         localStorage.setItem('timeISUp', false);
    
         this.fetchQuestions();
@@ -38,7 +43,15 @@ class QuizApp {
     async fetchQuestions() {
         try {
             const response = await fetch(this.apiUrl);
-            this.questions = await response.json();
+            const questionss = await response.json();
+            
+            this.questions = questionss
+                    .map(value => ({ value, sort: Math.random() }))
+                    .sort((a, b) => a.sort - b.sort)
+                    .map(({ value }) => value)
+            console.log(this.questions);
+            
+            
             this.totalQuestions = this.questions.length;
             this.userAnswers = new Array(this.totalQuestions).fill(null);
             this.updateProgress();
@@ -50,12 +63,31 @@ class QuizApp {
         }
     }
     handleFlage(){
-        
-        const flagedbuttomn = document.createElement('button');
+ 
+       let tof=true
+            if (this.flagedArry.length==0){
+              tof=true
+            }else{
+                for (let x of this.flagedArry){
+                    if (this.currentQuestionIndex==x){
+                        tof= false
+                    }
+                }
+            }
+
+        if(tof){
+            const flagedbuttomn = document.createElement('button');
             flagedbuttomn.classList.add('flaged-btn');
+            flagedbuttomn.id = `flagged-btn-${this.currentQuestionIndex}`;
             flagedbuttomn.innerText = this.currentQuestionIndex;
             this.flageArea.appendChild(flagedbuttomn)
+            this.flagedArry.push(this.currentQuestionIndex)
+        }
     }
+    handledeflag(){
+        
+    }
+
     renderQuestion() {
         if (this.questions.length > 0 && this.currentQuestionIndex < this.totalQuestions) {
             const currentQuestion = this.questions[this.currentQuestionIndex];
