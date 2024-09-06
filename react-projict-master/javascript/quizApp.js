@@ -24,13 +24,13 @@ class QuizApp {
         this.fullname=document.getElementById("fullNmame").innerHTML=`
         ${localStorage.getItem("first-name") }
         ${localStorage.getItem("last-name")}
-        
         `
-
+        this.flagbutton=document.getElementById("flag").addEventListener("click",()=>this.handleFlage())
+        this.flageArea=document.getElementById("flaged")
         document.getElementById('prev-btn').addEventListener('click', () => this.prevQuestion());
         document.getElementById('next-btn').addEventListener('click', () => this.nextQuestion());
         localStorage.setItem('timeISUp', false);
-
+   
         this.fetchQuestions();
         this.updateTimer();
     }
@@ -49,7 +49,13 @@ class QuizApp {
             this.questionTextElement.innerText = 'Failed to load questions.';
         }
     }
-
+    handleFlage(){
+        
+        const flagedbuttomn = document.createElement('button');
+            flagedbuttomn.classList.add('flaged-btn');
+            flagedbuttomn.innerText = this.currentQuestionIndex;
+            this.flageArea.appendChild(flagedbuttomn)
+    }
     renderQuestion() {
         if (this.questions.length > 0 && this.currentQuestionIndex < this.totalQuestions) {
             const currentQuestion = this.questions[this.currentQuestionIndex];

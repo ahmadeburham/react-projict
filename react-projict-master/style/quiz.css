@@ -184,3 +184,28 @@ body {
     display: block;
 }
 
+.flag{
+    background-color: #8d99ae;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.flaged{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+   
+}
+.flaged button{
+    background-color: #8d99ae;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: 10px 0 10px 0;
+    width: 60%;
+    align-self: center;
+}
