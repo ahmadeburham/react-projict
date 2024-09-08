@@ -32,12 +32,16 @@ class QuizApp {
         document.getElementById('next-btn').addEventListener('click', () => this.nextQuestion());
 
         this.flagebtn=document.getElementsByClassName('flaged-btn')
+        this.flageArea.addEventListener("click",()=> this.handleDeFlag())
+    
+    
         
 
         localStorage.setItem('timeISUp', false);
    
         this.fetchQuestions();
         this.updateTimer();
+   
     }
 
     async fetchQuestions() {
@@ -63,7 +67,7 @@ class QuizApp {
         }
     }
     handleFlage(){
- 
+
        let tof=true
             if (this.flagedArry.length==0){
               tof=true
@@ -74,6 +78,8 @@ class QuizApp {
                     }
                 }
             }
+
+            
 
         if(tof){
             const flagedbuttomn = document.createElement('button');
@@ -88,13 +94,38 @@ class QuizApp {
             
             const deletbtn=document.getElementById(`flagged-btn-${this.currentQuestionIndex}`)
             deletbtn.remove()
-            this.flagedArry.pop(this.currentQuestionIndex)
+            const index = this.flagedArry.indexOf(this.currentQuestionIndex);
+            if (index > -1) {
+            this.flagedArry.splice(index, 1);
+            }
         }
+        
+  
+ 
 
     }
-    handledeflag(){
-        
+    handleDeFlag(){
+        for (let x of this.flagebtn){
+           
+           if(x){
+            
+            
+            x.addEventListener("click",()=>{
+                this.currentQuestionIndex=parseInt(x.innerHTML, 10);;
+            this.renderQuestion();
+                
+                
+                
+            })
+           }
+            
+        }
+                
+           
+            
     }
+  
+    
 
     renderQuestion() {
         if (this.questions.length > 0 && this.currentQuestionIndex < this.totalQuestions) {
